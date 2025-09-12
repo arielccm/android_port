@@ -1,0 +1,14 @@
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/CMakeFiles/liveEffect.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/CMakeFiles/list_install_components.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/CMakeFiles/install.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/CMakeFiles/install/local.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/CMakeFiles/install/strip.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/oboe-bin/CMakeFiles/oboe.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/oboe-bin/CMakeFiles/edit_cache.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/oboe-bin/CMakeFiles/rebuild_cache.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/oboe-bin/CMakeFiles/list_install_components.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/oboe-bin/CMakeFiles/install.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/oboe-bin/CMakeFiles/install/local.dir
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a/oboe-bin/CMakeFiles/install/strip.dir

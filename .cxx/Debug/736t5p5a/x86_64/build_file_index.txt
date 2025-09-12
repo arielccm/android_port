@@ -1,0 +1,2 @@
+/Users/arielthomas/Desktop/android_port_stuff/oboe/CMakeLists.txt
+/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/CMakeLists.txt

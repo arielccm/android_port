@@ -1,0 +1,34 @@
+{
+  "buildFiles": [
+    "/Users/arielthomas/Desktop/android_port_stuff/oboe/CMakeLists.txt",
+    "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/arielthomas/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/arielthomas/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "liveEffect::@6890427a1f51a3e7e1df": {
+      "artifactName": "liveEffect",
+      "abi": "x86_64",
+      "output": "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/Debug/736t5p5a/obj/x86_64/libliveEffect.so",
+      "runtimeFiles": []
+    },
+    "oboe::@2eb8bc11657237233fcf": {
+      "artifactName": "oboe",
+      "abi": "x86_64",
+      "output": "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/x86_64/oboe-bin/liboboe.a",
+      "runtimeFiles": []
+    }
+  }
+}
