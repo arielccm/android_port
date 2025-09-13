@@ -1,2 +1,0 @@
-ninja: Entering directory `/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/x86'
-ninja: no work to do.

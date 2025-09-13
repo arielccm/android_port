@@ -11,6 +11,11 @@
 },
 {
   "directory": "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/x86",
+  "command": "/Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --sysroot=/Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror -o CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o -c /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/FullDuplexEngine.cpp",
+  "file": "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/FullDuplexEngine.cpp"
+},
+{
+  "directory": "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/x86",
   "command": "/Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android23 --sysroot=/Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror -o CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp.o -c /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp",
   "file": "/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp"
 },

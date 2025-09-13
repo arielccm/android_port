@@ -27,6 +27,7 @@ add_library(liveEffect
     SHARED
         LiveEffectEngine.cpp
         jni_bridge.cpp
+        FullDuplexEngine.cpp
         ${SAMPLE_ROOT_DIR}/debug-utils/trace.cpp)
 target_include_directories(liveEffect
     PRIVATE

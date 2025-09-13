@@ -22,6 +22,7 @@
 #include <string>
 #include <thread>
 #include "FullDuplexPass.h"
+#include "FullDuplexEngine.h"
 
 class LiveEffectEngine : public oboe::AudioStreamCallback {
 public:
@@ -61,7 +62,7 @@ private:
     const int32_t     mInputChannelCount = oboe::ChannelCount::Stereo;
     const int32_t     mOutputChannelCount = oboe::ChannelCount::Stereo;
 
-    std::unique_ptr<FullDuplexPass> mDuplexStream;
+    std::unique_ptr<FullDuplexEngine> mDuplexStream;
     std::shared_ptr<oboe::AudioStream> mRecordingStream;
     std::shared_ptr<oboe::AudioStream> mPlayStream;
 

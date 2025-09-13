@@ -1,4 +1,0 @@
-/Users/arielthomas/Library/Android/sdk/cmake/3.22.1/bin/ninja \
-  -C \
-  /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/.cxx/Debug/736t5p5a/armeabi-v7a \
-  liveEffect

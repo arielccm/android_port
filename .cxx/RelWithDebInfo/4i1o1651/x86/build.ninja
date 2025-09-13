@@ -56,8 +56,6 @@ build CMakeFiles/liveEffect.dir/LiveEffectEngine.cpp.o: CXX_COMPILER__liveEffect
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = CMakeFiles/liveEffect.dir
   OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
-  TARGET_COMPILE_PDB = CMakeFiles/liveEffect.dir/
-  TARGET_PDB = /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/RelWithDebInfo/4i1o1651/obj/x86/libliveEffect.pdb
 
 build CMakeFiles/liveEffect.dir/jni_bridge.cpp.o: CXX_COMPILER__liveEffect_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/jni_bridge.cpp || cmake_object_order_depends_target_liveEffect
   DEFINES = -DliveEffect_EXPORTS
@@ -66,8 +64,14 @@ build CMakeFiles/liveEffect.dir/jni_bridge.cpp.o: CXX_COMPILER__liveEffect_RelWi
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = CMakeFiles/liveEffect.dir
   OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
-  TARGET_COMPILE_PDB = CMakeFiles/liveEffect.dir/
-  TARGET_PDB = /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/RelWithDebInfo/4i1o1651/obj/x86/libliveEffect.pdb
+
+build CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o: CXX_COMPILER__liveEffect_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/FullDuplexEngine.cpp || cmake_object_order_depends_target_liveEffect
+  DEFINES = -DliveEffect_EXPORTS
+  DEP_FILE = CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG -fPIC -Wall -Werror
+  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
+  OBJECT_DIR = CMakeFiles/liveEffect.dir
+  OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
 
 build CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp.o: CXX_COMPILER__liveEffect_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp || cmake_object_order_depends_target_liveEffect
   DEFINES = -DliveEffect_EXPORTS
@@ -76,8 +80,6 @@ build CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/obo
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = CMakeFiles/liveEffect.dir
   OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils
-  TARGET_COMPILE_PDB = CMakeFiles/liveEffect.dir/
-  TARGET_PDB = /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/RelWithDebInfo/4i1o1651/obj/x86/libliveEffect.pdb
 
 
 # =============================================================================
@@ -87,7 +89,7 @@ build CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/obo
 #############################################
 # Link the shared library /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/RelWithDebInfo/4i1o1651/obj/x86/libliveEffect.so
 
-build /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/RelWithDebInfo/4i1o1651/obj/x86/libliveEffect.so: CXX_SHARED_LIBRARY_LINKER__liveEffect_RelWithDebInfo CMakeFiles/liveEffect.dir/LiveEffectEngine.cpp.o CMakeFiles/liveEffect.dir/jni_bridge.cpp.o CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp.o | oboe-bin/liboboe.a || oboe-bin/liboboe.a
+build /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/RelWithDebInfo/4i1o1651/obj/x86/libliveEffect.so: CXX_SHARED_LIBRARY_LINKER__liveEffect_RelWithDebInfo CMakeFiles/liveEffect.dir/LiveEffectEngine.cpp.o CMakeFiles/liveEffect.dir/jni_bridge.cpp.o CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp.o | oboe-bin/liboboe.a || oboe-bin/liboboe.a
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -g -DNDEBUG
   LINK_FLAGS = -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,--gc-sections   -Wl,-z,max-page-size=16384
   LINK_LIBRARIES = oboe-bin/liboboe.a  -landroid  -latomic  -llog  -lOpenSLES  -latomic -lm
@@ -96,9 +98,8 @@ build /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/buil
   PRE_LINK = :
   SONAME = libliveEffect.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_COMPILE_PDB = CMakeFiles/liveEffect.dir/
   TARGET_FILE = /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/RelWithDebInfo/4i1o1651/obj/x86/libliveEffect.so
-  TARGET_PDB = /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/RelWithDebInfo/4i1o1651/obj/x86/libliveEffect.pdb
+  TARGET_PDB = liveEffect.so.dbg
 
 
 #############################################
@@ -186,8 +187,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/aaudio/AAudioLoader.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/aaudio
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/aaudio/AudioStreamAAudio.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/aaudio/AudioStreamAAudio.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/aaudio/AudioStreamAAudio.cpp.o.d
@@ -195,8 +194,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/aaudio/AudioStreamAAudio.cpp.o: CXX_COMPI
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/aaudio
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/AdpfWrapper.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/AdpfWrapper.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/AdpfWrapper.cpp.o.d
@@ -204,8 +201,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/AdpfWrapper.cpp.o: CXX_COMPILER__o
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/AudioStream.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/AudioStream.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/AudioStream.cpp.o.d
@@ -213,8 +208,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/AudioStream.cpp.o: CXX_COMPILER__o
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/AudioStreamBuilder.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/AudioStreamBuilder.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/AudioStreamBuilder.cpp.o.d
@@ -222,8 +215,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/AudioStreamBuilder.cpp.o: CXX_COMP
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockAdapter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/FixedBlockAdapter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockAdapter.cpp.o.d
@@ -231,8 +222,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockAdapter.cpp.o: CXX_COMPI
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockReader.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/FixedBlockReader.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockReader.cpp.o.d
@@ -240,8 +229,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockReader.cpp.o: CXX_COMPIL
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockWriter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/FixedBlockWriter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockWriter.cpp.o.d
@@ -249,8 +236,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/FixedBlockWriter.cpp.o: CXX_COMPIL
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/LatencyTuner.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/LatencyTuner.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/LatencyTuner.cpp.o.d
@@ -258,8 +243,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/LatencyTuner.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/OboeExtensions.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/OboeExtensions.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/OboeExtensions.cpp.o.d
@@ -267,8 +250,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/OboeExtensions.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/Utilities.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/Utilities.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/Utilities.cpp.o.d
@@ -276,8 +257,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/Utilities.cpp.o: CXX_COMPILER__obo
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/QuirksManager.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/QuirksManager.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/QuirksManager.cpp.o.d
@@ -285,8 +264,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/QuirksManager.cpp.o: CXX_COMPILER_
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoBuffer.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/fifo/FifoBuffer.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoBuffer.cpp.o.d
@@ -294,8 +271,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoBuffer.cpp.o: CXX_COMPILER__oboe
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/fifo
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoController.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/fifo/FifoController.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoController.cpp.o.d
@@ -303,8 +278,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoController.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/fifo
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoControllerBase.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/fifo/FifoControllerBase.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoControllerBase.cpp.o.d
@@ -312,8 +285,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoControllerBase.cpp.o: CXX_COMPIL
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/fifo
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoControllerIndirect.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/fifo/FifoControllerIndirect.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoControllerIndirect.cpp.o.d
@@ -321,8 +292,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/fifo/FifoControllerIndirect.cpp.o: CXX_CO
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/fifo
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioInputStreamOpenSLES.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/opensles/AudioInputStreamOpenSLES.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioInputStreamOpenSLES.cpp.o.d
@@ -330,8 +299,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioInputStreamOpenSLES.cpp.o: 
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/opensles
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioOutputStreamOpenSLES.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/opensles/AudioOutputStreamOpenSLES.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioOutputStreamOpenSLES.cpp.o.d
@@ -339,8 +306,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioOutputStreamOpenSLES.cpp.o:
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/opensles
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioStreamBuffered.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/opensles/AudioStreamBuffered.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioStreamBuffered.cpp.o.d
@@ -348,8 +313,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioStreamBuffered.cpp.o: CXX_C
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/opensles
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioStreamOpenSLES.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/opensles/AudioStreamOpenSLES.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioStreamOpenSLES.cpp.o.d
@@ -357,8 +320,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/opensles/AudioStreamOpenSLES.cpp.o: CXX_C
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/opensles
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/opensles/EngineOpenSLES.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/opensles/EngineOpenSLES.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/opensles/EngineOpenSLES.cpp.o.d
@@ -366,8 +327,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/opensles/EngineOpenSLES.cpp.o: CXX_COMPIL
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/opensles
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/opensles/OpenSLESUtilities.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/opensles/OpenSLESUtilities.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/opensles/OpenSLESUtilities.cpp.o.d
@@ -375,8 +334,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/opensles/OpenSLESUtilities.cpp.o: CXX_COM
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/opensles
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/opensles/OutputMixerOpenSLES.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/opensles/OutputMixerOpenSLES.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/opensles/OutputMixerOpenSLES.cpp.o.d
@@ -384,8 +341,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/opensles/OutputMixerOpenSLES.cpp.o: CXX_C
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/opensles
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/StabilizedCallback.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/StabilizedCallback.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/StabilizedCallback.cpp.o.d
@@ -393,8 +348,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/StabilizedCallback.cpp.o: CXX_COMP
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/Trace.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/Trace.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/Trace.cpp.o.d
@@ -402,8 +355,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/Trace.cpp.o: CXX_COMPILER__oboe_Re
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/Version.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/Version.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/Version.cpp.o.d
@@ -411,8 +362,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/Version.cpp.o: CXX_COMPILER__oboe_
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/AudioSourceCaller.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/AudioSourceCaller.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/AudioSourceCaller.cpp.o.d
@@ -420,8 +369,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/AudioSourceCaller.cpp.o: CXX_COMPI
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/DataConversionFlowGraph.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/DataConversionFlowGraph.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/DataConversionFlowGraph.cpp.o.d
@@ -429,8 +376,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/DataConversionFlowGraph.cpp.o: CXX
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/FilterAudioStream.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/FilterAudioStream.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/FilterAudioStream.cpp.o.d
@@ -438,8 +383,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/FilterAudioStream.cpp.o: CXX_COMPI
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/SourceFloatCaller.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/SourceFloatCaller.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/SourceFloatCaller.cpp.o.d
@@ -447,8 +390,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/SourceFloatCaller.cpp.o: CXX_COMPI
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI16Caller.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/SourceI16Caller.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI16Caller.cpp.o.d
@@ -456,8 +397,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI16Caller.cpp.o: CXX_COMPILE
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI24Caller.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/SourceI24Caller.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI24Caller.cpp.o.d
@@ -465,8 +404,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI24Caller.cpp.o: CXX_COMPILE
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI32Caller.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/common/SourceI32Caller.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI32Caller.cpp.o.d
@@ -474,8 +411,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/common/SourceI32Caller.cpp.o: CXX_COMPILE
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/common
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/FlowGraphNode.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/FlowGraphNode.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/FlowGraphNode.cpp.o.d
@@ -483,8 +418,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/FlowGraphNode.cpp.o: CXX_COMPIL
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ChannelCountConverter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/ChannelCountConverter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ChannelCountConverter.cpp.o.d
@@ -492,8 +425,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ChannelCountConverter.cpp.o: CX
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ClipToRange.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/ClipToRange.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ClipToRange.cpp.o.d
@@ -501,8 +432,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ClipToRange.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/Limiter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/Limiter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/Limiter.cpp.o.d
@@ -510,8 +439,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/Limiter.cpp.o: CXX_COMPILER__ob
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ManyToMultiConverter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/ManyToMultiConverter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ManyToMultiConverter.cpp.o.d
@@ -519,8 +446,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/ManyToMultiConverter.cpp.o: CXX
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MonoBlend.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/MonoBlend.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MonoBlend.cpp.o.d
@@ -528,8 +453,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MonoBlend.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MonoToMultiConverter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/MonoToMultiConverter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MonoToMultiConverter.cpp.o.d
@@ -537,8 +460,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MonoToMultiConverter.cpp.o: CXX
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MultiToManyConverter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/MultiToManyConverter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MultiToManyConverter.cpp.o.d
@@ -546,8 +467,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MultiToManyConverter.cpp.o: CXX
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MultiToMonoConverter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/MultiToMonoConverter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MultiToMonoConverter.cpp.o.d
@@ -555,8 +474,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/MultiToMonoConverter.cpp.o: CXX
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/RampLinear.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/RampLinear.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/RampLinear.cpp.o.d
@@ -564,8 +481,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/RampLinear.cpp.o: CXX_COMPILER_
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SampleRateConverter.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SampleRateConverter.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SampleRateConverter.cpp.o.d
@@ -573,8 +488,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SampleRateConverter.cpp.o: CXX_
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkFloat.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SinkFloat.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkFloat.cpp.o.d
@@ -582,8 +495,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkFloat.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI16.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SinkI16.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI16.cpp.o.d
@@ -591,8 +502,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI16.cpp.o: CXX_COMPILER__ob
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI24.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SinkI24.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI24.cpp.o.d
@@ -600,8 +509,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI24.cpp.o: CXX_COMPILER__ob
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI32.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SinkI32.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI32.cpp.o.d
@@ -609,8 +516,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI32.cpp.o: CXX_COMPILER__ob
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI8_24.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SinkI8_24.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI8_24.cpp.o.d
@@ -618,8 +523,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SinkI8_24.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceFloat.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SourceFloat.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceFloat.cpp.o.d
@@ -627,8 +530,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceFloat.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI16.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SourceI16.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI16.cpp.o.d
@@ -636,8 +537,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI16.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI24.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SourceI24.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI24.cpp.o.d
@@ -645,8 +544,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI24.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI32.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SourceI32.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI32.cpp.o.d
@@ -654,8 +551,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI32.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI8_24.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/SourceI8_24.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI8_24.cpp.o.d
@@ -663,8 +558,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/SourceI8_24.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/IntegerRatio.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/resampler/IntegerRatio.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/IntegerRatio.cpp.o.d
@@ -672,8 +565,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/IntegerRatio.cpp.o: C
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/LinearResampler.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/resampler/LinearResampler.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/LinearResampler.cpp.o.d
@@ -681,8 +572,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/LinearResampler.cpp.o
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/MultiChannelResampler.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/resampler/MultiChannelResampler.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/MultiChannelResampler.cpp.o.d
@@ -690,8 +579,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/MultiChannelResampler
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResampler.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/resampler/PolyphaseResampler.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResampler.cpp.o.d
@@ -699,8 +586,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResampler.cp
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResamplerMono.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/resampler/PolyphaseResamplerMono.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResamplerMono.cpp.o.d
@@ -708,8 +593,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResamplerMon
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResamplerStereo.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/resampler/PolyphaseResamplerStereo.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResamplerStereo.cpp.o.d
@@ -717,8 +600,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/PolyphaseResamplerSte
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/SincResampler.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/resampler/SincResampler.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/SincResampler.cpp.o.d
@@ -726,8 +607,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/SincResampler.cpp.o: 
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/SincResamplerStereo.cpp.o: CXX_COMPILER__oboe_RelWithDebInfo /Users/arielthomas/Desktop/android_port_stuff/oboe/src/flowgraph/resampler/SincResamplerStereo.cpp || cmake_object_order_depends_target_oboe
   DEP_FILE = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/SincResamplerStereo.cpp.o.d
@@ -735,8 +614,6 @@ build oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/SincResamplerStereo.c
   INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/src -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   OBJECT_FILE_DIR = oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
-  TARGET_PDB = oboe-bin/liboboe.pdb
 
 
 # =============================================================================
@@ -751,9 +628,8 @@ build oboe-bin/liboboe.a: CXX_STATIC_LIBRARY_LINKER__oboe_RelWithDebInfo oboe-bi
   OBJECT_DIR = oboe-bin/CMakeFiles/oboe.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = oboe-bin/CMakeFiles/oboe.dir/oboe.pdb
   TARGET_FILE = oboe-bin/liboboe.a
-  TARGET_PDB = oboe-bin/liboboe.pdb
+  TARGET_PDB = oboe.a.dbg
 
 
 #############################################
@@ -856,14 +732,14 @@ build oboe-bin/all: phony oboe-bin/liboboe.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Users/arielthomas/Desktop/android_port_stuff/oboe/CMakeLists.txt /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/CMakeLists.txt /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompiler.cmake.in /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCompilerIdDetection.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCXXCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompileFeatures.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerABI.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineSystem.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeFindBinUtils.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseImplicitIncludeInfo.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseImplicitLinkInfo.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseLibraryArchitecture.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystem.cmake.in /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCXXCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCompilerCommon.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ADSP-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Borland-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-FindBinUtils.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Cray-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GHS-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/HP-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IAR-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Intel-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/MSVC-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/PGI-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/PathScale-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SCO-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/TI-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Watcom-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XL-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Internal/FeatureTesting.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android/Determine-Compiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/abis.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android-legacy.toolchain.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/flags.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Clang.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Determine.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Initialize.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Determine-Compiler.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/platforms.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Users/arielthomas/Desktop/android_port_stuff/oboe/CMakeLists.txt /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/CMakeLists.txt /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/abis.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android-legacy.toolchain.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/flags.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Clang.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Initialize.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/platforms.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/arielthomas/Desktop/android_port_stuff/oboe/CMakeLists.txt /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/CMakeLists.txt /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompiler.cmake.in /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCompilerIdDetection.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCXXCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompileFeatures.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerABI.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineSystem.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeFindBinUtils.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseImplicitIncludeInfo.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseImplicitLinkInfo.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseLibraryArchitecture.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystem.cmake.in /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCXXCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCompilerCommon.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ADSP-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Borland-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-FindBinUtils.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Cray-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GHS-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/HP-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IAR-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Intel-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/MSVC-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/PGI-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/PathScale-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SCO-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/TI-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Watcom-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XL-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Internal/FeatureTesting.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android/Determine-Compiler.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/abis.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android-legacy.toolchain.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/flags.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Clang.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Determine.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Initialize.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Determine-Compiler.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/platforms.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake: phony
+build /Users/arielthomas/Desktop/android_port_stuff/oboe/CMakeLists.txt /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/CMakeLists.txt /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /Users/arielthomas/Library/Android/sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/abis.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android-legacy.toolchain.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/flags.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Clang.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Initialize.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android.cmake /Users/arielthomas/Library/Android/sdk/ndk/27.0.12077973/build/cmake/platforms.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake: phony
 
 
 #############################################

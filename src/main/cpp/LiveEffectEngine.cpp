@@ -16,8 +16,9 @@
 
 #include <cassert>
 #include <logging_macros.h>
-
+#include <cstring>
 #include "LiveEffectEngine.h"
+#include "FullDuplexEngine.h"
 
 LiveEffectEngine::LiveEffectEngine() {
     assert(mOutputChannelCount == mInputChannelCount);
@@ -127,10 +128,16 @@ oboe::Result  LiveEffectEngine::openStreams() {
          (int)mRecordingStream->getChannelMask(),
          mRecordingStream->getDeviceId());
 
-    mDuplexStream = std::make_unique<FullDuplexPass>();
+    mDuplexStream = std::make_unique<FullDuplexEngine>();
     mDuplexStream->setSharedInputStream(mRecordingStream);
     mDuplexStream->setSharedOutputStream(mPlayStream);
-    mDuplexStream->start();
+    if (!mDuplexStream->start()) {
+        LOGE("FullDuplexEngine failed to start");
+        closeStream(mRecordingStream);
+        closeStream(mPlayStream);
+        mDuplexStream.reset();
+        return oboe::Result::ErrorInternal;
+    }
     return result;
 }
 
@@ -239,26 +246,24 @@ void LiveEffectEngine::warnIfNotLowLatency(std::shared_ptr<oboe::AudioStream> &s
  * @return: DataCallbackResult::Continue.
  */
 oboe::DataCallbackResult LiveEffectEngine::onAudioReady(
-    oboe::AudioStream *oboeStream, void *audioData, int32_t numFrames) {
-    // Let the duplex stream pull input and fill the output buffer first
-    oboe::DataCallbackResult res = oboe::DataCallbackResult::Continue;
+        oboe::AudioStream* /*oboeStream*/, void* audioData, int32_t numFrames) {
+    // Fill the output buffer by pulling from our FullDuplexEngine (blocking read under the hood).
     if (mDuplexStream) {
-        res = mDuplexStream->onAudioReady(oboeStream, audioData, numFrames);
+        mDuplexStream->pullTo(static_cast<float*>(audioData), numFrames);
     } else {
         // Safety: if not available, output silence
-        memset(audioData, 0, sizeof(float) * numFrames * mOutputChannelCount);
+        std::memset(audioData, 0, sizeof(float) * numFrames * mOutputChannelCount);
     }
 
-    // *** Simple test processing: apply a 0.5 gain to the output ***
-    // Adjust channel count if you switch to stereo later.
-    const int channelCount = mOutputChannelCount; // typically 1 in this sample
-    float *out = static_cast<float *>(audioData);
-    const int n = numFrames * channelCount;
+    // Simple test processing: apply a 0.9 gain to the output
+    float* out = static_cast<float*>(audioData);
+    const int n = numFrames * mOutputChannelCount; // 2 if stereo, 1 if mono
     for (int i = 0; i < n; ++i) {
         out[i] *= 0.9f;
     }
 
-    return res;
+    // We handled the buffer; keep streaming.
+    return oboe::DataCallbackResult::Continue;
 }
 
 /**
