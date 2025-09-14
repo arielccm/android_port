@@ -41,7 +41,7 @@ bool FullDuplexEngine::start() {
 
     // Prime output ring with a few bursts of silence so the first callbacks do not underflow.
     {
-        const int kPrimeBursts = 6; // ~6 * 96 frames @48k ≈ 12 ms of audio
+        const int kPrimeBursts = 20; // ~20 * 96 frames @48k ≈ 40 ms of audio
         std::vector<float> zeros(static_cast<size_t>(fpb) * ch, 0.0f);
         for (int i = 0; i < kPrimeBursts; ++i) {
             // Ignore return; if the ring can't take more it will just stop filling.
@@ -56,14 +56,17 @@ bool FullDuplexEngine::start() {
     mR48.resize(fpb);
     mL16.resize(fpb / 3);
     mR16.resize(fpb / 3);
-    mL48b.resize(fpb);
-    mR48b.resize(fpb);
-    mTmpOut.resize(static_cast<size_t>(fpb) * ch);
+    mL48b.resize(fpb * 3);
+    mR48b.resize(fpb * 3);
+    mTmpOut.resize(static_cast<size_t>(fpb) * 3 * ch);
 
     // NEW (M3): mono buffers
     mMono16.resize(fpb / 3);
     mBlkMono16.resize(fpb / 3);
-    mUp48Mono.resize(fpb);
+    mUp48Mono.resize(fpb * 3);
+    // STFT hop buffers (one hop = 96 @16k)
+    mHopIn16.resize(96);
+    mHopOut16.resize(96);
 
     mBlkL16.resize(fpb / 3);
     mBlkR16.resize(fpb / 3);
@@ -142,7 +145,7 @@ void FullDuplexEngine::ioThreadFunc() {
 
         // 3) 48k -> 16k -> (mono) -> 48k round-trip
         int32_t canXfer = std::min(mInRing.availableToRead(), mOutRing.availableToWrite());
-        if (canXfer >= fpb) {
+        while (canXfer >= fpb) {
             // read one burst @48k interleaved
             int32_t rd = mInRing.readInterleaved(mTmpXfer.data(), fpb);
             if (rd == fpb) {
@@ -165,38 +168,59 @@ void FullDuplexEngine::ioThreadFunc() {
                     mOverflows.fetch_add(out16 - wM);
                 }
 
-                // pull back from mono ring
-                int r16 = std::min(mMid16kMono.availableToRead(), out16);
-                if (r16 > 0) {
-                    (void)mMid16kMono.readInterleaved(mBlkMono16.data(), r16);
+// Feed STFT in 96-sample hops, pop 96 back each hop, upsample to 48k, duplicate to stereo
+                while (mMid16kMono.availableToRead() >= 96) {
+                    (void)mMid16kMono.readInterleaved(mHopIn16.data(), 96);
 
-                    // upsample mono by 3 -> back to 48k (expect fpb frames)
-                    const int up = mUpMono.process(mBlkMono16.data(), r16, mUp48Mono.data(), (int)mUp48Mono.size());
-                    const int upFrames = std::min(up, fpb);
+                    // push 96 into STFT
+                    mStft.pushTimeDomain(mHopIn16.data(), 96);
 
-                    // duplicate mono to stereo
-                    for (int i = 0; i < upFrames; ++i) {
-                        mL48b[i] = mUp48Mono[i];
-                        mR48b[i] = mUp48Mono[i];
+                    // pop exactly 96 out of STFT
+                    const int got16 = mStft.popTimeDomain(mHopOut16.data(), 96);
+                    if (got16 == 96) {
+                        // upsample 96 -> 288 @48k
+                        const int up = mUpMono.process(mHopOut16.data(), 96, mUp48Mono.data(), (int)mUp48Mono.size());
+                        const int upFrames = up; // allow full 288 frames from one hop
+
+                        // duplicate mono to stereo
+                        for (int i = 0; i < upFrames; ++i) {
+                            mL48b[i] = mUp48Mono[i];
+                            mR48b[i] = mUp48Mono[i];
+                        }
+
+                        // interleave and write to out ring
+                        interleaveStereo(mL48b.data(), mR48b.data(), upFrames, mTmpOut.data());
+                        int32_t wr = mOutRing.writeInterleaved(mTmpOut.data(), upFrames);
+                        if (wr < upFrames) mOverflows.fetch_add(upFrames - wr);
                     }
-
-                    // interleave and write to out ring
-                    interleaveStereo(mL48b.data(), mR48b.data(), upFrames, mTmpOut.data());
-                    int32_t wr = mOutRing.writeInterleaved(mTmpOut.data(), upFrames);
-                    if (wr < upFrames) mOverflows.fetch_add(upFrames - wr);
                 }
             }
+            canXfer = std::min(mInRing.availableToRead(), mOutRing.availableToWrite());
         }
 
         // --- Periodic stats log every 1s ---
         auto now = std::chrono::steady_clock::now();
         if (now - lastLog > std::chrono::seconds(1)) {
             lastLog = now;
-            LOGD("Stats: InRing=%d OutRing=%d Overflows=%" PRId64 " Underflows=%" PRId64,
+            // STFT counters
+            uint64_t hops   = mStft.hopsProcessed();
+            uint64_t pushed = mStft.framesPushed();
+            uint64_t popped = mStft.framesPopped();
+
+            LOGD("Stats: InRing=%d OutRing=%d Overflows=%" PRId64 " Underflows=%" PRId64
+                         " | STFT hops +%llu (tot %llu), push +%llu, pop +%llu",
                  mInRing.availableToRead(),
                  mOutRing.availableToRead(),
                  static_cast<int64_t>(mOverflows.load()),
-                 static_cast<int64_t>(mUnderflows.load()));
+                 static_cast<int64_t>(mUnderflows.load()),
+                 (unsigned long long)(hops   - mDbgLastHops),
+                 (unsigned long long)hops,
+                 (unsigned long long)(pushed - mDbgLastPushed),
+                 (unsigned long long)(popped - mDbgLastPopped));
+
+            mDbgLastHops   = hops;
+            mDbgLastPushed = pushed;
+            mDbgLastPopped = popped;
         }
     }
 }
@@ -214,7 +238,12 @@ int32_t FullDuplexEngine::pullTo(float* out, int32_t numFrames) {
         const int32_t ch = mOut->getChannelCount();
         std::memset(out + static_cast<size_t>(total) * ch, 0,
                     static_cast<size_t>(numFrames - total) * ch * sizeof(float));
-        mUnderflows.fetch_add((numFrames - total));
+        // During warm-up (first ~300 ms after start), do not count underflows
+        auto now = std::chrono::steady_clock::now();
+        bool warming = (now - mStartTime) < std::chrono::milliseconds(300);
+        if (!warming) {
+            mUnderflows.fetch_add((numFrames - total));
+        }
     }
     return numFrames; // we always fill the buffer handed to the callback
 }

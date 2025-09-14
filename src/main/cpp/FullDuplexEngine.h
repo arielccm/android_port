@@ -7,6 +7,7 @@
 #include "RingBuffer.h"
 #include "Resampler3x.h"
 #include <chrono>
+#include "StftProcessor.h"
 
 class FullDuplexEngine {
 public:
@@ -63,8 +64,18 @@ private:
     std::vector<float> mBlkL16; // reused 16k chunk (left or mono)
     std::vector<float> mBlkR16; // reused 16k chunk (right)
 
+    // STFT processor @16k mono
+    StftProcessor mStft;
+// 16k hop buffers (exactly one hop = 96)
+    std::vector<float> mHopIn16;   // size 96
+    std::vector<float> mHopOut16;  // size 96
+
     // For simple stats (optional)
     std::atomic<int64_t> mUnderflows{0};
     std::atomic<int64_t> mOverflows{0};
+    // Debug: STFT counters snapshot for logging
+    uint64_t mDbgLastHops{0};
+    uint64_t mDbgLastPushed{0};
+    uint64_t mDbgLastPopped{0};
     std::chrono::steady_clock::time_point mStartTime{};
 };

@@ -53,7 +53,7 @@ build CMakeFiles/liveEffect.dir/LiveEffectEngine.cpp.o: CXX_COMPILER__liveEffect
   DEFINES = -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS
   DEP_FILE = CMakeFiles/liveEffect.dir/LiveEffectEngine.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror
-  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
+  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = CMakeFiles/liveEffect.dir
   OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
 
@@ -61,7 +61,7 @@ build CMakeFiles/liveEffect.dir/jni_bridge.cpp.o: CXX_COMPILER__liveEffect_Debug
   DEFINES = -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS
   DEP_FILE = CMakeFiles/liveEffect.dir/jni_bridge.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror
-  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
+  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = CMakeFiles/liveEffect.dir
   OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
 
@@ -69,7 +69,7 @@ build CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o: CXX_COMPILER__liveEffect
   DEFINES = -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS
   DEP_FILE = CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror
-  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
+  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = CMakeFiles/liveEffect.dir
   OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
 
@@ -77,7 +77,23 @@ build CMakeFiles/liveEffect.dir/Resampler3x.cpp.o: CXX_COMPILER__liveEffect_Debu
   DEFINES = -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS
   DEP_FILE = CMakeFiles/liveEffect.dir/Resampler3x.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror
-  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
+  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
+  OBJECT_DIR = CMakeFiles/liveEffect.dir
+  OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
+
+build CMakeFiles/liveEffect.dir/StftProcessor.cpp.o: CXX_COMPILER__liveEffect_Debug /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/StftProcessor.cpp || cmake_object_order_depends_target_liveEffect
+  DEFINES = -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS
+  DEP_FILE = CMakeFiles/liveEffect.dir/StftProcessor.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror
+  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
+  OBJECT_DIR = CMakeFiles/liveEffect.dir
+  OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
+
+build CMakeFiles/liveEffect.dir/RingBuffer.cpp.o: CXX_COMPILER__liveEffect_Debug /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp/RingBuffer.cpp || cmake_object_order_depends_target_liveEffect
+  DEFINES = -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS
+  DEP_FILE = CMakeFiles/liveEffect.dir/RingBuffer.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror
+  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = CMakeFiles/liveEffect.dir
   OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir
 
@@ -85,7 +101,7 @@ build CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/obo
   DEFINES = -DOBOE_ENABLE_LOGGING=1 -DliveEffect_EXPORTS
   DEP_FILE = CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -Wall -Werror
-  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
+  INCLUDES = -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/../include -I/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/src/main/cpp -I/Users/arielthomas/Desktop/android_port_stuff/oboe/include
   OBJECT_DIR = CMakeFiles/liveEffect.dir
   OBJECT_FILE_DIR = CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils
 
@@ -97,7 +113,7 @@ build CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/obo
 #############################################
 # Link the shared library /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/Debug/736t5p5a/obj/armeabi-v7a/libliveEffect.so
 
-build /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/Debug/736t5p5a/obj/armeabi-v7a/libliveEffect.so: CXX_SHARED_LIBRARY_LINKER__liveEffect_Debug CMakeFiles/liveEffect.dir/LiveEffectEngine.cpp.o CMakeFiles/liveEffect.dir/jni_bridge.cpp.o CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o CMakeFiles/liveEffect.dir/Resampler3x.cpp.o CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp.o | oboe-bin/liboboe.a || oboe-bin/liboboe.a
+build /Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/Debug/736t5p5a/obj/armeabi-v7a/libliveEffect.so: CXX_SHARED_LIBRARY_LINKER__liveEffect_Debug CMakeFiles/liveEffect.dir/LiveEffectEngine.cpp.o CMakeFiles/liveEffect.dir/jni_bridge.cpp.o CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o CMakeFiles/liveEffect.dir/Resampler3x.cpp.o CMakeFiles/liveEffect.dir/StftProcessor.cpp.o CMakeFiles/liveEffect.dir/RingBuffer.cpp.o CMakeFiles/liveEffect.dir/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/debug-utils/trace.cpp.o | oboe-bin/liboboe.a || oboe-bin/liboboe.a
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info
   LINK_FLAGS = -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments    -Wl,-z,max-page-size=16384
   LINK_LIBRARIES = oboe-bin/liboboe.a  -landroid  -latomic  -llog  -lOpenSLES  -latomic -lm

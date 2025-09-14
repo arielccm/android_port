@@ -29,11 +29,15 @@ add_library(liveEffect
         jni_bridge.cpp
         FullDuplexEngine.cpp
         Resampler3x.cpp
+        StftProcessor.cpp
+        RingBuffer.cpp
         ${SAMPLE_ROOT_DIR}/debug-utils/trace.cpp)
 target_include_directories(liveEffect
-    PRIVATE
+        PRIVATE
         ${SAMPLE_ROOT_DIR}/debug-utils
-        ${OBOE_DIR}/include)
+        ${OBOE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
 target_link_libraries(liveEffect
     PRIVATE
         oboe
