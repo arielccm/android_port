@@ -70,3 +70,8 @@
 1323	1614	1757857555249558295	oboe-bin/CMakeFiles/oboe.dir/src/flowgraph/resampler/MultiChannelResampler.cpp.o	57cd645c18f9901c
 11	1123	1757857554756847533	oboe-bin/CMakeFiles/oboe.dir/src/common/AudioStreamBuilder.cpp.o	89095d1752de8700
 1756	1799	1757857555429774390	/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/Debug/736t5p5a/obj/arm64-v8a/libliveEffect.so	97dead6e0c19886c
+3	304	1757865368832289584	CMakeFiles/liveEffect.dir/jni_bridge.cpp.o	cbffd67f833f86fe
+3	325	1757865368854094046	CMakeFiles/liveEffect.dir/LiveEffectEngine.cpp.o	d962e2ca6dd76149
+3	330	1757865368858390305	CMakeFiles/liveEffect.dir/FullDuplexEngine.cpp.o	4506cbe341733458
+330	471	1757865368993166001	/Users/arielthomas/Desktop/android_port_stuff/oboe/samples/LiveEffect/build/intermediates/cxx/Debug/736t5p5a/obj/arm64-v8a/libliveEffect.so	97dead6e0c19886c
+0	14	0	clean	ddb779ccc1853672

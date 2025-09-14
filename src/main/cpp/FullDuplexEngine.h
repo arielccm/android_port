@@ -41,6 +41,14 @@ private:
     Resampler3x mUpL  {Resampler3x::Mode::UpBy3};
     Resampler3x mUpR  {Resampler3x::Mode::UpBy3};
 
+    // NEW step 3: mono 16 kHz ring and buffers
+    RingBuffer mMid16kMono;        // 16 kHz mono queue
+
+    std::vector<float> mMono16;    // mixed L/R -> mono @16k for current chunk (size fpb/3)
+    std::vector<float> mBlkMono16; // temp pull from mono ring @16k (size fpb/3)
+    std::vector<float> mUp48Mono;  // upsampled mono @48k (size fpb)
+    Resampler3x mUpMono{Resampler3x::Mode::UpBy3};
+
     std::thread mThread;
     std::atomic<bool> mRunning{false};
 

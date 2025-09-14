@@ -60,17 +60,23 @@ bool FullDuplexEngine::start() {
     mR48b.resize(fpb);
     mTmpOut.resize(static_cast<size_t>(fpb) * ch);
 
+    // NEW (M3): mono buffers
+    mMono16.resize(fpb / 3);
+    mBlkMono16.resize(fpb / 3);
+    mUp48Mono.resize(fpb);
+
     mBlkL16.resize(fpb / 3);
     mBlkR16.resize(fpb / 3);
 
     const int32_t cap16 = (sr / 5) / 3; // 48k/5/3 ≈ 3200
     if (!mMid16kL.init(cap16, 1)) return false;
     if (!mMid16kR.init(cap16, 1)) return false;
+    if (!mMid16kMono.init(cap16, 1)) return false;  // NEW
 
 // Reset resamplers (not strictly necessary, but tidy)
     mDownL.reset(); mDownR.reset();
     mUpL.reset();   mUpR.reset();
-
+    mUpMono.reset(); // NEW
     // Start streams so read()/callback are active
     {
         auto rIn = mIn->requestStart();
@@ -134,7 +140,7 @@ void FullDuplexEngine::ioThreadFunc() {
         int32_t wrote = mInRing.writeInterleaved(mTmpIn.data(), got);
         if (wrote < got) mOverflows.fetch_add(got - wrote);
 
-        // 3) 48k -> 16k -> 48k round-trip (still "no-op" DSP)
+        // 3) 48k -> 16k -> (mono) -> 48k round-trip
         int32_t canXfer = std::min(mInRing.availableToRead(), mOutRing.availableToWrite());
         if (canXfer >= fpb) {
             // read one burst @48k interleaved
@@ -148,24 +154,33 @@ void FullDuplexEngine::ioThreadFunc() {
                 const int out16R = mDownR.process(mR48.data(), fpb, mR16.data(), (int)mR16.size());
                 const int out16  = std::min(out16L, out16R);
 
-                // write to 16k rings (decoupling point for future STFT/model)
-                int wL = mMid16kL.writeInterleaved(mL16.data(), out16);
-                int wR = mMid16kR.writeInterleaved(mR16.data(), out16);
-                if (wL < out16 || wR < out16) {
-                    mOverflows.fetch_add((out16 - std::min(wL, wR)));
+                // --- Milestone 3: mix to mono @16k
+                for (int i = 0; i < out16; ++i) {
+                    mMono16[i] = 0.5f * (mL16[i] + mR16[i]);
                 }
 
-                // pull back from 16k rings (same block size for now)
-                int r16 = std::min(mMid16kL.availableToRead(), mMid16kR.availableToRead());
-                r16 = std::min(r16, out16);
+                // write mono to mono ring (decoupling point for future STFT/model)
+                int wM = mMid16kMono.writeInterleaved(mMono16.data(), out16);
+                if (wM < out16) {
+                    mOverflows.fetch_add(out16 - wM);
+                }
+
+                // pull back from mono ring
+                int r16 = std::min(mMid16kMono.availableToRead(), out16);
                 if (r16 > 0) {
-                    (void)mMid16kL.readInterleaved(mBlkL16.data(), r16);
-                    (void)mMid16kR.readInterleaved(mBlkR16.data(), r16);
+                    (void)mMid16kMono.readInterleaved(mBlkMono16.data(), r16);
 
-                    const int upL = mUpL.process(mBlkL16.data(), r16, mL48b.data(), (int)mL48b.size());
-                    const int upR = mUpR.process(mBlkR16.data(), r16, mR48b.data(), (int)mR48b.size());
-                    const int upFrames = std::min({upL, upR, fpb});
+                    // upsample mono by 3 -> back to 48k (expect fpb frames)
+                    const int up = mUpMono.process(mBlkMono16.data(), r16, mUp48Mono.data(), (int)mUp48Mono.size());
+                    const int upFrames = std::min(up, fpb);
 
+                    // duplicate mono to stereo
+                    for (int i = 0; i < upFrames; ++i) {
+                        mL48b[i] = mUp48Mono[i];
+                        mR48b[i] = mUp48Mono[i];
+                    }
+
+                    // interleave and write to out ring
                     interleaveStereo(mL48b.data(), mR48b.data(), upFrames, mTmpOut.data());
                     int32_t wr = mOutRing.writeInterleaved(mTmpOut.data(), upFrames);
                     if (wr < upFrames) mOverflows.fetch_add(upFrames - wr);
