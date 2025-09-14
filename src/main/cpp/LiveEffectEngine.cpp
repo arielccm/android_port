@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
+
 #include <cassert>
 #include <logging_macros.h>
 #include <cstring>
 #include "LiveEffectEngine.h"
 #include "FullDuplexEngine.h"
+
 
 LiveEffectEngine::LiveEffectEngine() {
     assert(mOutputChannelCount == mInputChannelCount);
@@ -96,10 +98,6 @@ oboe::Result  LiveEffectEngine::openStreams() {
              mPlayStream->getFramesPerBurst(),
              mPlayStream->getBufferCapacityInFrames());
     }
-    warnIfNotLowLatency(mPlayStream);
-    // Keep output queueing minimal for lowest latency
-    mPlayStream->setBufferSizeInFrames(mPlayStream->getFramesPerBurst());
-
     setupRecordingStreamParameters(&inBuilder, mSampleRate);
     result = inBuilder.openStream(mRecordingStream);
     if (result != oboe::Result::OK) {

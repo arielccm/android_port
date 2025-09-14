@@ -3,9 +3,29 @@
 #include <cinttypes>
 #include <atomic>
 #include <chrono>
+#ifdef __ANDROID__
+#include <sys/resource.h>
+#endif
+
+// --- Small helpers for (de)interleaving ---
+static inline void deinterleaveStereo(const float* inter, int frames,
+                                      float* L, float* R) {
+    const float* p = inter;
+    for (int i = 0; i < frames; ++i) {
+        L[i] = *p++;
+        R[i] = *p++;
+    }
+}
+static inline void interleaveStereo(const float* L, const float* R, int frames,
+                                    float* inter) {
+    float* p = inter;
+    for (int i = 0; i < frames; ++i) {
+        *p++ = L[i];
+        *p++ = R[i];
+    }
+}
 bool FullDuplexEngine::start() {
     if (!mIn || !mOut) return false;
-
     const int32_t ch = mOut->getChannelCount();
     const int32_t fpb = mOut->getFramesPerBurst();
     const int32_t sr  = mOut->getSampleRate();
@@ -18,6 +38,38 @@ bool FullDuplexEngine::start() {
 
     mTmpIn.resize(static_cast<size_t>(fpb) * ch);
     mTmpXfer.resize(static_cast<size_t>(fpb) * ch);
+
+    // Prime output ring with a few bursts of silence so the first callbacks do not underflow.
+    {
+        const int kPrimeBursts = 6; // ~6 * 96 frames @48k ≈ 12 ms of audio
+        std::vector<float> zeros(static_cast<size_t>(fpb) * ch, 0.0f);
+        for (int i = 0; i < kPrimeBursts; ++i) {
+            // Ignore return; if the ring can't take more it will just stop filling.
+            (void)mOutRing.writeInterleaved(zeros.data(), fpb);
+        }
+    }
+// Record start time (optional future use: grace period for counters)
+    mStartTime = std::chrono::steady_clock::now();
+
+    // NEW: per-channel scratch
+    mL48.resize(fpb);
+    mR48.resize(fpb);
+    mL16.resize(fpb / 3);
+    mR16.resize(fpb / 3);
+    mL48b.resize(fpb);
+    mR48b.resize(fpb);
+    mTmpOut.resize(static_cast<size_t>(fpb) * ch);
+
+    mBlkL16.resize(fpb / 3);
+    mBlkR16.resize(fpb / 3);
+
+    const int32_t cap16 = (sr / 5) / 3; // 48k/5/3 ≈ 3200
+    if (!mMid16kL.init(cap16, 1)) return false;
+    if (!mMid16kR.init(cap16, 1)) return false;
+
+// Reset resamplers (not strictly necessary, but tidy)
+    mDownL.reset(); mDownR.reset();
+    mUpL.reset();   mUpR.reset();
 
     // Start streams so read()/callback are active
     {
@@ -61,16 +113,18 @@ void FullDuplexEngine::stop() {
 
 void FullDuplexEngine::ioThreadFunc() {
     const int32_t fpb = mOut->getFramesPerBurst();
-
+    #ifdef __ANDROID__
+    setpriority(PRIO_PROCESS, 0, -18);
+    #endif
     auto lastLog = std::chrono::steady_clock::now();
 
     while (mRunning.load(std::memory_order_acquire)) {
         // 1) BLOCKING READ from input
         oboe::ResultWithValue<int32_t> res =
-                mIn->read(mTmpIn.data(), fpb, 20 * 1000 * 1000 /* 20ms timeout */);
+                mIn->read(mTmpIn.data(), fpb, 10 * 1000 * 1000 /* 10ms timeout */);
 
         if (!res) {
-            continue; // glitch
+            continue; // glitchgit
         }
 
         int32_t got = res.value();
@@ -80,15 +134,43 @@ void FullDuplexEngine::ioThreadFunc() {
         int32_t wrote = mInRing.writeInterleaved(mTmpIn.data(), got);
         if (wrote < got) mOverflows.fetch_add(got - wrote);
 
-        // 3) passthrough
+        // 3) 48k -> 16k -> 48k round-trip (still "no-op" DSP)
         int32_t canXfer = std::min(mInRing.availableToRead(), mOutRing.availableToWrite());
-        while (canXfer >= fpb) {
+        if (canXfer >= fpb) {
+            // read one burst @48k interleaved
             int32_t rd = mInRing.readInterleaved(mTmpXfer.data(), fpb);
             if (rd == fpb) {
-                int32_t wr = mOutRing.writeInterleaved(mTmpXfer.data(), fpb);
-                if (wr < fpb) mOverflows.fetch_add(fpb - wr);
+                // deinterleave to L/R @48k
+                deinterleaveStereo(mTmpXfer.data(), fpb, mL48.data(), mR48.data());
+
+                // downsample by 3 -> 16k (expect fpb/3 frames)
+                const int out16L = mDownL.process(mL48.data(), fpb, mL16.data(), (int)mL16.size());
+                const int out16R = mDownR.process(mR48.data(), fpb, mR16.data(), (int)mR16.size());
+                const int out16  = std::min(out16L, out16R);
+
+                // write to 16k rings (decoupling point for future STFT/model)
+                int wL = mMid16kL.writeInterleaved(mL16.data(), out16);
+                int wR = mMid16kR.writeInterleaved(mR16.data(), out16);
+                if (wL < out16 || wR < out16) {
+                    mOverflows.fetch_add((out16 - std::min(wL, wR)));
+                }
+
+                // pull back from 16k rings (same block size for now)
+                int r16 = std::min(mMid16kL.availableToRead(), mMid16kR.availableToRead());
+                r16 = std::min(r16, out16);
+                if (r16 > 0) {
+                    (void)mMid16kL.readInterleaved(mBlkL16.data(), r16);
+                    (void)mMid16kR.readInterleaved(mBlkR16.data(), r16);
+
+                    const int upL = mUpL.process(mBlkL16.data(), r16, mL48b.data(), (int)mL48b.size());
+                    const int upR = mUpR.process(mBlkR16.data(), r16, mR48b.data(), (int)mR48b.size());
+                    const int upFrames = std::min({upL, upR, fpb});
+
+                    interleaveStereo(mL48b.data(), mR48b.data(), upFrames, mTmpOut.data());
+                    int32_t wr = mOutRing.writeInterleaved(mTmpOut.data(), upFrames);
+                    if (wr < upFrames) mOverflows.fetch_add(upFrames - wr);
+                }
             }
-            canXfer = std::min(mInRing.availableToRead(), mOutRing.availableToWrite());
         }
 
         // --- Periodic stats log every 1s ---

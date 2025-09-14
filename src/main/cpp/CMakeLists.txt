@@ -28,6 +28,7 @@ add_library(liveEffect
         LiveEffectEngine.cpp
         jni_bridge.cpp
         FullDuplexEngine.cpp
+        Resampler3x.cpp
         ${SAMPLE_ROOT_DIR}/debug-utils/trace.cpp)
 target_include_directories(liveEffect
     PRIVATE
